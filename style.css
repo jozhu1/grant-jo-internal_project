@@ -1,0 +1,137 @@
+/* style.css */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", Helvetica, sans-serif;
+  background-color: #ffffff;
+}
+
+/* Container styling */
+.macbook-pro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* this centers vertically */
+  padding-top: 4rem; /* adds space from the top */
+  position: relative;
+  width: 100%;
+  max-width: 1728px;
+  min-height: 100vh;
+  margin: 0 auto;
+  background-color: #ffffff;
+}
+
+/* Container for headline to center it */
+.headline-container {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center; /* Center headline horizontally */
+  align-items: center;     /* Optional: center vertically */
+  padding: 0 2rem;
+}
+
+.header-row {
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  z-index: 10; /* keeps it above other content if necessary */
+}
+
+
+
+/* Headline styling */
+.headline {
+  font-size: clamp(2rem, 6vw, 5rem);
+  color: #62a9ff;
+  font-weight: 700;
+  line-height: 1.2;
+  max-width: 900px;
+  margin: 0;
+  text-align: center;
+  word-break: break-word;
+}
+
+/* Button wrapper */
+.macbook-pro .component {
+  position: static; /* Remove absolute positioning */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 0.5rem 1.5rem;
+  background-color: #62a8ff;
+  border-radius: 32.5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  width: auto;
+  height: auto;
+}
+
+
+
+
+
+
+
+/* Button hover effect */
+.macbook-pro .component:hover {
+  background-color: #ffffff;
+  outline-width: 0.2rem;
+  outline-style: solid;
+  outline-color: #62a8ff;
+}
+
+.macbook-pro .component:hover .text-wrapper {
+  color: #62a8ff;
+}
+
+/* Text inside the button */
+.macbook-pro .text-wrapper {
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 1.5rem;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+  .macbook-pro {
+    padding: 1.5rem;
+  }
+
+  .macbook-pro .text-wrapper {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .macbook-pro {
+    padding: 1rem;
+  }
+
+  .macbook-pro .component {
+    padding: 0.5rem 1rem;
+  }
+
+  .macbook-pro .text-wrapper {
+    font-size: 1rem;
+  }
+}
+
+
+
+
+.macbook-pro .component:focus,
+.macbook-pro .component:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.macbook-pro .component:focus-visible {
+  outline: 2px solid #4a90e2;
+  outline-offset: 2px;
+}
+
+
