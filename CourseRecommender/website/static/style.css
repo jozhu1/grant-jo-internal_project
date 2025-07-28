@@ -1,0 +1,317 @@
+/* style.css */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", Helvetica, sans-serif;
+  background-color: #ffffff;
+}
+
+/* Container styling */
+.macbook-pro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* this centers vertically */
+  padding-top: 4rem; /* adds space from the top */
+  position: relative;
+  width: 100%;
+  max-width: 1728px;
+  min-height: 100vh;
+  margin: 0 auto;
+  background-color: #ffffff;
+}
+
+/* Container for headline to center it */
+.headline-container {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center; /* Center headline horizontally */
+  align-items: center;     /* Optional: center vertically */
+  padding: 0 2rem;
+}
+
+.header-row {
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  z-index: 10; /* keeps it above other content if necessary */
+}
+
+/* Headline styling */
+.headline {
+  font-size: clamp(2rem, 6vw, 5rem);
+  color: #62a9ff;
+  font-weight: 700;
+  line-height: 1.2;
+  max-width: 900px;
+  margin: 0 0 3rem 0;
+  text-align: center;
+  word-break: break-word;
+}
+
+/* Button wrapper */
+.macbook-pro .component {
+  position: static; /* Remove absolute positioning */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 0.5rem 1.5rem;
+  background-color: #62a8ff;
+  border-radius: 32.5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  width: auto;
+  height: auto;
+}
+
+/* Button hover effect */
+.macbook-pro .component:hover {
+  background-color: #ffffff;
+  outline-width: 0.2rem;
+  outline-style: solid;
+  outline-color: #62a8ff;
+}
+
+.macbook-pro .component:hover .text-wrapper {
+  color: #62a8ff;
+}
+
+/* Text inside the button */
+.macbook-pro .text-wrapper {
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 1.5rem;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* Course Recommendation Interface Styles */
+.recommendation-container {
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.input-section {
+  margin-bottom: 2rem;
+}
+
+.input-label {
+  display: block;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.course-input-container {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.course-input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 2px solid #e1e5e9;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: "Inter", sans-serif;
+  transition: border-color 0.3s ease;
+}
+
+.course-input:focus {
+  outline: none;
+  border-color: #62a8ff;
+}
+
+.add-course-btn {
+  padding: 0.75rem 1.5rem;
+  background-color: #62a8ff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: "Inter", sans-serif;
+}
+
+.add-course-btn:hover {
+  background-color: #4a90e2;
+}
+
+.course-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.course-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: #f0f8ff;
+  border: 1px solid #62a8ff;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #62a8ff;
+}
+
+.remove-course-btn {
+  background: none;
+  border: none;
+  color: #62a8ff;
+  cursor: pointer;
+  font-size: 1.2rem;
+  padding: 0;
+  line-height: 1;
+}
+
+.remove-course-btn:hover {
+  color: #e74c3c;
+}
+
+.recommend-btn {
+  width: 100%;
+  padding: 1rem 2rem;
+  background-color: #62a8ff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: "Inter", sans-serif;
+  margin-bottom: 2rem;
+}
+
+.recommend-btn:hover:not(:disabled) {
+  background-color: #4a90e2;
+  transform: translateY(-2px);
+}
+
+.recommend-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.loading-spinner {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #62a8ff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.recommendations-container {
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-top: 2rem;
+  border: 1px solid #e1e5e9;
+}
+
+.recommendations-title {
+  color: #333;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.recommendations-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.recommendations-list li {
+  padding: 0.75rem 1rem;
+  background-color: white;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+  border-left: 4px solid #62a8ff;
+  font-weight: 500;
+  color: #333;
+}
+
+.error-message {
+  background-color: #fee;
+  color: #c33;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #fcc;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+  .macbook-pro {
+    padding: 1.5rem;
+  }
+
+  .macbook-pro .text-wrapper {
+    font-size: 1.2rem;
+  }
+  
+  .recommendation-container {
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .macbook-pro {
+    padding: 1rem;
+  }
+
+  .macbook-pro .component {
+    padding: 0.5rem 1rem;
+  }
+
+  .macbook-pro .text-wrapper {
+    font-size: 1rem;
+  }
+  
+  .course-input-container {
+    flex-direction: column;
+  }
+  
+  .add-course-btn {
+    width: 100%;
+  }
+}
+
+.macbook-pro .component:focus,
+.macbook-pro .component:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.macbook-pro .component:focus-visible {
+  outline: 2px solid #4a90e2;
+  outline-offset: 2px;
+}
+
+

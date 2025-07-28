@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Berkeley Course Recommender</title>
+  <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="macbook-pro">
+    <div class="header-row">
+      <button class="component" id="loginBtn">
+        <span class="text-wrapper">Log In</span>
+      </button>
+      <button class="component" id="logoutBtn" style="display:none;">
+        <span class="text-wrapper">Log Out</span>
+      </button>
+    </div>
+    <div id="loginGate" style="display:none; text-align:center; margin-top:4rem;">
+      <h2>Please log in or sign up to use the Course Recommender.</h2>
+      <button class="component" id="showLogin">Log In</button>
+      <button class="component" id="showSignup">Sign Up</button>
+    </div>
+    <div class="content-wrapper" id="mainContent" style="display:none;">
+      <h1 class="headline">Berkeley EECS Course Recommender</h1>
+      
+      <!-- Course Recommendation Interface -->
+      <div class="recommendation-container">
+        <div class="input-section">
+          <label for="courseInput" class="input-label">Select courses you have completed:</label>
+          <div class="course-input-container">
+            <input type="text" id="courseInput" placeholder="Type course code (e.g., CS61A, EE16A)" class="course-input">
+            <button id="addCourseBtn" class="add-course-btn">Add</button>
+          </div>
+          <div class="course-tags" id="courseTags"></div>
+        </div>
+        
+        <button id="getRecommendationsBtn" class="recommend-btn" disabled>
+          Get Recommendations
+        </button>
+        
+        <div id="loadingSpinner" class="loading-spinner" style="display: none;">
+          <div class="spinner"></div>
+          <p>Getting recommendations...</p>
+        </div>
+        
+        <div id="recommendationsContainer" class="recommendations-container" style="display: none;">
+          <h3 class="recommendations-title">Recommended Next Courses</h3>
+          <ul id="recommendationsList" class="recommendations-list"></ul>
+        </div>
+        
+        <div id="errorMessage" class="error-message" style="display: none;"></div>
+      </div>
+      <!-- Notes Section -->
+      <div class="notes-section" style="margin-top:3rem;">
+        <h2>Notes</h2>
+        <form id="noteForm" style="margin-bottom:1rem;">
+          <textarea id="noteInput" rows="2" placeholder="Add a note..." style="width:100%;"></textarea>
+          <button type="submit" class="add-course-btn">Add Note</button>
+        </form>
+        <div id="notesList"></div>
+      </div>
+    </div>
+  </div>
+  
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
+
+
+
